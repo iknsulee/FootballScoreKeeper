@@ -8,9 +8,13 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     int scoreTeamA = 0;
-    int foulTeamA = 0;
     int scoreTeamB = 0;
-    int foulTeamB = 0;
+
+    int redCardCountTeamA = 0;
+    int redCardCountTeamB = 0;
+
+    int yellowCardCountTeamA = 0;
+    int yellowCardCountTeamB = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Displays red card count for Team A.
+     */
+    public void displayRedCardCountForTeamA(int foul) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_red_card_count);
+        scoreView.setText(String.valueOf(foul));
+    }
+
+    /**
+     * Displays yellow card count for Team A.
+     */
+    public void displayYellowCardCountForTeamA(int count) {
+        TextView scoreView = (TextView) findViewById(R.id.team_a_yellow_card_count);
+        scoreView.setText(String.valueOf(count));
+    }
+
+    /**
      * Displays the given score for Team B.
      */
     public void displayForTeamB(int score) {
@@ -35,29 +55,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Displays the foul for Team A.
+     * Displays red card count for Team A.
      */
-    public void displayFoulForTeamA(int foul) {
-        TextView scoreView = (TextView) findViewById(R.id.team_a_foul);
+    public void displayRedCardCountForTeamB(int foul) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_red_card_count);
         scoreView.setText(String.valueOf(foul));
     }
 
     /**
-     * Displays the foul for Team B.
+     * Displays yellow card count for Team A.
      */
-    public void displayFoulForTeamB(int foul) {
-        TextView scoreView = (TextView) findViewById(R.id.team_b_foul);
-        scoreView.setText(String.valueOf(foul));
-    }
-
-    public void addTreeForTeamA(View view) {
-        scoreTeamA = scoreTeamA + 3;
-        displayForTeamA(scoreTeamA);
-    }
-
-    public void addTwoForTeamA(View view) {
-        scoreTeamA = scoreTeamA + 2;
-        displayForTeamA(scoreTeamA);
+    public void displayYellowCardCountForTeamB(int count) {
+        TextView scoreView = (TextView) findViewById(R.id.team_b_yellow_card_count);
+        scoreView.setText(String.valueOf(count));
     }
 
     public void addOneForTeamA(View view) {
@@ -65,42 +75,49 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamA(scoreTeamA);
     }
 
-    public void addTreeForTeamB(View view) {
-        scoreTeamB = scoreTeamB + 3;
-        displayForTeamB(scoreTeamB);
+    public void addOneRedCardForTeamA(View view) {
+        redCardCountTeamA = redCardCountTeamA + 1;
+        displayRedCardCountForTeamA(redCardCountTeamA);
     }
 
-    public void addTwoForTeamB(View view) {
-        scoreTeamB = scoreTeamB + 2;
-        displayForTeamB(scoreTeamB);
+    public void addOneYellowCardForTeamA(View view) {
+        yellowCardCountTeamA = yellowCardCountTeamA + 1;
+        displayYellowCardCountForTeamA(yellowCardCountTeamA);
     }
 
     public void addOneForTeamB(View view) {
-        scoreTeamB = scoreTeamB + 1;
+        scoreTeamB= scoreTeamB+ 1;
         displayForTeamB(scoreTeamB);
+    }
+
+    public void addOneRedCardForTeamB(View view) {
+        redCardCountTeamB= redCardCountTeamB+ 1;
+        displayRedCardCountForTeamB(redCardCountTeamB);
+    }
+
+    public void addOneYellowCardForTeamB(View view) {
+        yellowCardCountTeamB= yellowCardCountTeamB+ 1;
+        displayYellowCardCountForTeamB(yellowCardCountTeamB);
     }
 
     public void resetScore(View view) {
         scoreTeamA = 0;
         scoreTeamB = 0;
 
-        foulTeamA = 0;
-        foulTeamB = 0;
+        yellowCardCountTeamA = 0;
+        yellowCardCountTeamB = 0;
+
+        redCardCountTeamA = 0;
+        redCardCountTeamB = 0;
 
         displayForTeamA(scoreTeamA);
+        displayYellowCardCountForTeamA(yellowCardCountTeamA);
+        displayRedCardCountForTeamA(redCardCountTeamA);
+
         displayForTeamB(scoreTeamB);
-
-        displayFoulForTeamA(foulTeamA);
-        displayFoulForTeamB(foulTeamB);
+        displayYellowCardCountForTeamB(yellowCardCountTeamB);
+        displayRedCardCountForTeamB(redCardCountTeamB);
     }
 
-    public void addOneFoulForTeamA(View view) {
-        foulTeamA = foulTeamA + 1;
-        displayFoulForTeamA(foulTeamA);
-    }
 
-    public void addOneFoulForTeamB(View view) {
-        foulTeamB = foulTeamB + 1;
-        displayFoulForTeamB(foulTeamB);
-    }
 }
