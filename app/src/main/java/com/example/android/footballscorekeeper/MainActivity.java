@@ -86,17 +86,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addOneForTeamB(View view) {
-        scoreTeamB= scoreTeamB+ 1;
+        scoreTeamB = scoreTeamB + 1;
         displayForTeamB(scoreTeamB);
     }
 
     public void addOneRedCardForTeamB(View view) {
-        redCardCountTeamB= redCardCountTeamB+ 1;
+        redCardCountTeamB = redCardCountTeamB + 1;
         displayRedCardCountForTeamB(redCardCountTeamB);
     }
 
     public void addOneYellowCardForTeamB(View view) {
-        yellowCardCountTeamB= yellowCardCountTeamB+ 1;
+        yellowCardCountTeamB = yellowCardCountTeamB + 1;
         displayYellowCardCountForTeamB(yellowCardCountTeamB);
     }
 

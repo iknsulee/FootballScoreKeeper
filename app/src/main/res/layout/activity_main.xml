@@ -85,8 +85,7 @@
                 android:layout_marginRight="24dp"
                 android:background="#FFEB3B"
                 android:onClick="addOneYellowCardForTeamA"
-                android:text="yellow card">
-            </Button>
+                android:text="yellow card" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -115,10 +114,9 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:background="#FF5722"
-                android:textColor="#FFFFFF"
                 android:onClick="addOneRedCardForTeamA"
-                android:text="Red card">
-            </Button>
+                android:text="Red card"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
@@ -202,8 +200,7 @@
                 android:layout_marginRight="24dp"
                 android:background="#FFEB3B"
                 android:onClick="addOneYellowCardForTeamB"
-                android:text="yellow card">
-            </Button>
+                android:text="yellow card" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -232,10 +229,9 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:background="#FF5722"
-                android:textColor="#FFFFFF"
                 android:onClick="addOneRedCardForTeamB"
-                android:text="Red card">
-            </Button>
+                android:text="Red card"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
